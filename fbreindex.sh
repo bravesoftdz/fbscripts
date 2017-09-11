@@ -9,7 +9,7 @@ DATAPATH=$1
 
 for file in $DATAPATH
 do
-    DATABASE=$file
+    DATABASE="localhost:$file"
 
     printf 'SET HEADING off;\n SELECT "RDB$INDEX_NAME" FROM "RDB$INDICES" WHERE "RDB$SYSTEM_FLAG"=0 ORDER BY "RDB$INDEX_NAME";' | /opt/firebird/bin/isql -u $USERNAME -p $PASSWORD $DATABASE > $FLIDXLST
 

@@ -5,9 +5,8 @@ FLIDXLST=/tmp/idxlst.tmp
 
 USERNAME=sysdba
 PASSWORD=masterkey
-DATAPATH=$1
 
-for file in $DATAPATH
+for file in "$@"
 do
     DATABASE="localhost:$file"
 
